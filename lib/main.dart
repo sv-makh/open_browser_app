@@ -10,6 +10,11 @@ class MyApp extends StatelessWidget {
 
   static const platform = MethodChannel('open.browser');
 
+  //метод для вызова нативного кода:
+  //для android код на Java
+  // /android/app/src/main/java/com/example/open_browser_app/MainActivity.java
+  //для ios код на Objective C (не проверялся)
+  // /ios/Runner/AppDelegate.m
   Future<void> _launchBrowser() async {
     try {
       await platform.invokeMethod('launchBrowser');
